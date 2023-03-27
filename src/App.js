@@ -49,9 +49,16 @@ function App() {
                 </a>
                 <div class="p-5">
                   <a href="#">
-                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{recipe.recipe.calories}</h5>
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{recipe.recipe.label}</h5>
                   </a>
-                  <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
+                  {(recipe.recipe.ingredientLines
+                  ).map((item) => {
+                    return (
+                      <p class="mb-3 recipe-labels font-normal text-gray-700 dark:text-gray-400">&#x2022;{item}</p>
+                    )
+                  })}
+                  <p class="mb-3 font-normal text-yellow-700 dark:text-gray-400">{recipe.recipe.yield + " "}Servings</p>
+                  <p class="mb-3 font-normal text-green-700 dark:text-green-400">{((recipe.recipe.calories)/1000).toFixed(2)+ " "}Kcal</p>
                 </div>
               </div>
             </div>

@@ -9,3 +9,7 @@ body {
 .image-width {
     max-width: 23% !important;
 }
+
+.recipe-labels {
+    font-size: 13px;
+}
